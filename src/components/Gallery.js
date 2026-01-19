@@ -10,26 +10,26 @@ import wedding3 from '../assets/gallery/wedding/wedding-3.jpg';
 import wedding4 from '../assets/gallery/wedding/wedding-4.jpg';
 
 // BIRTHDAY CAKES
-import birthday1 from '../assets/gallery/birthday/birthday-1.jpg';
-import birthday2 from '../assets/gallery/birthday/birthday-2.jpg';
-import birthday3 from '../assets/gallery/birthday/birthday-3.jpg';
-import birthday4 from '../assets/gallery/birthday/birthday-4.jpg';
-import birthday5 from '../assets/gallery/birthday/birthday-5.jpg';
-import birthday6 from '../assets/gallery/birthday/birthday-6.jpg';
-import birthday7 from '../assets/gallery/birthday/birthday-7.jpg';
-import birthday8 from '../assets/gallery/birthday/birthday-8.jpg';
-import birthday9 from '../assets/gallery/birthday/birthday-9.jpg';
-import birthday10 from '../assets/gallery/birthday/birthday-10.jpg';
-import birthday11 from '../assets/gallery/birthday/birthday-11.jpg';
-import birthday12 from '../assets/gallery/birthday/birthday-12.jpg';
-import birthday13 from '../assets/gallery/birthday/birthday-13.jpg';
-import birthday14 from '../assets/gallery/birthday/birthday-14.jpg';
-import birthday15 from '../assets/gallery/birthday/birthday-15.jpg';
-import birthday16 from '../assets/gallery/birthday/birthday-16.jpg';
-import birthday17 from '../assets/gallery/birthday/birthday-17.jpg';
-import birthday18 from '../assets/gallery/birthday/birthday-18.jpg';
-import birthday19 from '../assets/gallery/birthday/birthday-19.jpg';
-import birthday20 from '../assets/gallery/birthday/birthday-20.jpg';
+import birthday4 from '../assets/gallery/birthday/birthday-1.jpg';
+import birthday5 from '../assets/gallery/birthday/birthday-2.jpg';
+import birthday6 from '../assets/gallery/birthday/birthday-3.jpg';
+import birthday7 from '../assets/gallery/birthday/birthday-4.jpg';
+import birthday8 from '../assets/gallery/birthday/birthday-5.jpg';
+import birthday9 from '../assets/gallery/birthday/birthday-6.jpg';
+import birthday10 from '../assets/gallery/birthday/birthday-7.jpg';
+import birthday11 from '../assets/gallery/birthday/birthday-8.jpg';
+import birthday12 from '../assets/gallery/birthday/birthday-9.jpg';
+import birthday13 from '../assets/gallery/birthday/birthday-10.jpg';
+import birthday14 from '../assets/gallery/birthday/birthday-11.jpg';
+import birthday15 from '../assets/gallery/birthday/birthday-12.jpg';
+import birthday16 from '../assets/gallery/birthday/birthday-13.jpg';
+import birthday17 from '../assets/gallery/birthday/birthday-14.jpg';
+import birthday18 from '../assets/gallery/birthday/birthday-15.jpg';
+import birthday19 from '../assets/gallery/birthday/birthday-16.jpg';
+import birthday20 from '../assets/gallery/birthday/birthday-17.jpg';
+// import birthday21 from '../assets/gallery/birthday/birthday-18.jpg';
+// import birthday22 from '../assets/gallery/birthday/birthday-19.jpg';
+// import birthday23 from '../assets/gallery/birthday/birthday-20.jpg';
 
 // CUSTOM CAKES
 import custom1 from '../assets/gallery/custom/custom-1.jpg';
@@ -94,21 +94,21 @@ const Gallery = () => {
       category: 'birthday',
       title: 'Chocolate Fudge Delight',
       description: 'Rich chocolate with buttercream',
-      image: birthday1
+      image: birthday4
     },
     {
       id: 5,
       category: 'birthday',
       title: 'Rainbow Sprinkle Fun',
       description: 'Colorful celebration cake',
-      image: birthday2
+      image: birthday5
     },
     {
       id: 6,
       category: 'birthday',
       title: 'Number Cake Special',
       description: 'Personalized age celebration',
-      image: birthday3
+      image: birthday6
     },
         {
       id: 7,
@@ -157,7 +157,7 @@ const Gallery = () => {
       category: 'birthday',
       title: 'Number Cake Special',
       description: 'Personalized age celebration',
-      image: birthday3
+      image: birthday13
     },
         {
       id: 14,
@@ -373,7 +373,7 @@ const Gallery = () => {
       category: 'wedding',
       title: 'Royal Wedding Cake',
       description: 'Luxurious multi-tier masterpiece',
-      image: wedding3
+      image: wedding4
     },
 
   ];

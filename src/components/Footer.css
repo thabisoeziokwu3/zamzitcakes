@@ -21,7 +21,7 @@
 
 .footer-logo .highlight {
   background: linear-gradient(45deg, #EFB5C8, #C2758F);
-  -webkit-background-clip: text;
+  /* -webkit-background-clip: text; */
   -webkit-text-fill-color: transparent;
 }
 
