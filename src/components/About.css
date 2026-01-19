@@ -1,0 +1,321 @@
+/* components/About.css - UPDATED (uniform cards, images fit perfectly) */
+
+.about {
+  padding: 80px 20px;
+  background: linear-gradient(180deg, #000000 0%, rgba(20, 0, 10, 0.8) 100%);
+}
+
+.about-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.about-content {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.about-title {
+  font-size: 2.5rem;
+  margin-bottom: 25px;
+  line-height: 1.2;
+}
+
+.about-title .highlight {
+  background: linear-gradient(45deg, #EFB5C8, #C2758F);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.about-text {
+  max-width: 800px;
+  margin: 0 auto 40px;
+}
+
+.about-text p {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.85);
+  margin-bottom: 20px;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.stat-item {
+  text-align: center;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  border: 1px solid rgba(239, 181, 200, 0.15);
+  transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.stat-item:hover {
+  transform: translateY(-5px);
+  border-color: #EFB5C8;
+}
+
+.stat-number {
+  font-size: 2rem;
+  font-weight: 700;
+  background: linear-gradient(45deg, #EFB5C8, #C2758F);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 8px;
+}
+
+.stat-label {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* ============================================= */
+/* CAKES GRID */
+/* ============================================= */
+.about-image {
+  width: 100%;
+}
+
+.cakes-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+/* Card */
+.cake-card {
+  width: 100%;
+  border-radius: 15px;
+  overflow: hidden;
+  background: rgba(0, 0, 0, 0.3);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+  border: 1px solid rgba(239, 181, 200, 0.2);
+  display: flex;
+  flex-direction: column;
+}
+
+.cake-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 35px rgba(239, 181, 200, 0.2);
+  border-color: #EFB5C8;
+}
+
+/* ============================================= */
+/* IMAGE: PERFECT FIT (uniform frame + cover) */
+/* ============================================= */
+.image-wrapper {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  /* change to 4 / 5 if you want taller cards */
+  overflow: hidden;
+  border-radius: 15px 15px 0 0;
+  background: #1a1a1a;
+}
+
+.cake-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  /* fills perfectly; crops edges if needed */
+  object-position: center;
+  display: block;
+  /* removes inline image baseline gap */
+  transform: translateZ(0);
+  transition: transform 0.5s ease;
+  background: #1a1a1a;
+}
+
+.cake-card:hover .cake-image {
+  transform: scale(1.05);
+}
+
+/* ============================================= */
+/* TEXT OVERLAY */
+/* ============================================= */
+.cake-content {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 20px 15px;
+  background: linear-gradient(to top,
+      rgba(0, 0, 0, 0.95) 0%,
+      rgba(0, 0, 0, 0.7) 50%,
+      transparent 100%);
+  text-align: center;
+  z-index: 2;
+}
+
+.cake-title {
+  color: #EFB5C8;
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-bottom: 5px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.cake-description {
+  color: rgba(255, 255, 255, 0.95);
+  font-size: 0.9rem;
+  line-height: 1.3;
+  margin: 0;
+}
+
+/* ============================================= */
+/* RESPONSIVE */
+/* ============================================= */
+
+/* TABLET */
+@media (max-width: 992px) {
+  .about-title {
+    font-size: 2.2rem;
+  }
+
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+    max-width: 600px;
+    gap: 15px;
+  }
+
+  .cakes-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    max-width: 900px;
+  }
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+  .about {
+    padding: 60px 15px;
+  }
+
+  .about-title {
+    font-size: 1.8rem;
+    padding: 0 10px;
+  }
+
+  .about-text p {
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    max-width: 100%;
+  }
+
+  .stat-item {
+    padding: 15px;
+  }
+
+  .stat-number {
+    font-size: 1.8rem;
+  }
+
+  /* MOBILE: Single column */
+  .cakes-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+    max-width: 100%;
+    padding: 0 10px;
+  }
+
+  /* Optional: slightly taller image frame on mobile for nicer composition */
+  .image-wrapper {
+    aspect-ratio: 4 / 5;
+  }
+
+  .cake-content {
+    padding: 25px 20px;
+  }
+
+  .cake-title {
+    font-size: 1.3rem;
+  }
+
+  .cake-description {
+    font-size: 1rem;
+  }
+}
+
+/* SMALL MOBILE */
+@media (max-width: 480px) {
+  .about-title {
+    font-size: 1.6rem;
+  }
+
+  .stats-grid {
+    grid-template-columns: 1fr;
+    max-width: 250px;
+  }
+
+  .cake-content {
+    padding: 20px 15px;
+  }
+
+  .cake-title {
+    font-size: 1.1rem;
+  }
+
+  .cake-description {
+    font-size: 0.9rem;
+  }
+}
+
+/* EXTRA SMALL */
+@media (max-width: 360px) {
+  .cake-title {
+    font-size: 1rem;
+  }
+
+  .cake-description {
+    font-size: 0.85rem;
+  }
+}
+
+/* ============================================= */
+/* ANIMATIONS */
+/* ============================================= */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.cake-card {
+  animation: fadeInUp 0.6s ease-out forwards;
+  opacity: 0;
+}
+
+.cake-card:nth-child(1) {
+  animation-delay: 0.1s;
+}
+
+.cake-card:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.cake-card:nth-child(3) {
+  animation-delay: 0.3s;
+}
