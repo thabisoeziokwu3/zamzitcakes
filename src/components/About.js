@@ -1,4 +1,4 @@
-// components/About.js - FIXED for mixed aspect ratio images
+// components/About.js - UPDATED with other confectionaries
 import React from 'react';
 import './About.css';
 import cake1 from '../assets/gallery/featured/cake-2.jpg';
@@ -12,7 +12,7 @@ const About = () => {
       image: cake1, 
       label: 'Wedding Special', 
       desc: 'Elegant designs for your special day',
-      aspectRatio: 'tall' // You'll adjust this based on your images
+      aspectRatio: 'tall'
     },
     { 
       id: 2, 
@@ -30,6 +30,10 @@ const About = () => {
     }
   ];
 
+  const otherConfectionaries = [
+    'Chin Chin', 'Samoosas', 'Puff Puff', 'Spring Rolls', 'Doughnuts'
+  ];
+
   return (
     <section className="about" id="about">
       <div className="about-container">
@@ -44,6 +48,18 @@ const About = () => {
             <p>
               Each creation is meticulously crafted by our team of excellent bakers, blending traditional techniques with innovative designs.
             </p>
+            
+            {/* Other Confectionaries Section */}
+            <div className="other-confectionaries">
+              <h3 className="confectionaries-title">We Also Specialize In:</h3>
+              <div className="confectionaries-list">
+                {otherConfectionaries.map((item, index) => (
+                  <span key={index} className="confectionary-item">
+                    {item}
+                  </span>
+                ))}
+              </div>
+            </div>
           </div>
           
           <div className="stats-grid">
@@ -56,7 +72,7 @@ const About = () => {
               <p className="stat-label">Years of Excellence</p>
             </div>
             <div className="stat-item">
-              <h3 className="stat-number">Multiple Awards</h3>
+              <h3 className="stat-number">Multiple</h3>
               <p className="stat-label">Awards Won</p>
             </div>
             <div className="stat-item">
@@ -70,7 +86,6 @@ const About = () => {
           <div className="cakes-grid">
             {cakes.map((cake) => (
               <div key={cake.id} className={`cake-card ${cake.aspectRatio}`}>
-                {/* Using img tag with object-fit: contain */}
                 <div className="image-wrapper">
                   <img 
                     src={cake.image} 

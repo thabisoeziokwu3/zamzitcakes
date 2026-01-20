@@ -105,7 +105,7 @@ const Contact = () => {
             <input
               type="tel"
               name="phone"
-              placeholder="WhatsApp Number"
+              placeholder="Phone Number"
               value={formData.phone}
               onChange={handleChange}
               required

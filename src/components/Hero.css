@@ -1,18 +1,43 @@
-/* components/Hero.css - Complete redesign */
+/* components/Hero.css - Updated with fixed background and better alignment */
 .hero {
   height: 100vh;
-  background:
-    linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.3)),
-    var(--hero-image);
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
   display: flex;
   align-items: center;
   justify-content: center;
   position: relative;
   overflow: hidden;
   animation: fadeIn 1.5s ease-out;
+}
+
+/* Fixed background image */
+.hero-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: var(--hero-image);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  /* This makes it stay still */
+  z-index: 1;
+  animation: none;
+  /* Remove any animations on the background */
+}
+
+/* Dark overlay over background */
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(rgba(0, 0, 0, 0.7) 0%,
+      rgba(0, 0, 0, 0.5) 50%,
+      rgba(0, 0, 0, 0.3) 100%);
+  z-index: 2;
 }
 
 :root {
@@ -53,18 +78,25 @@
 .company-logo {
   max-width: 100%;
   height: auto;
+  max-height: 150px;
+  object-fit: contain;
   filter:
     drop-shadow(0 5px 15px rgba(0, 0, 0, 0.8)) brightness(1.1) contrast(1.1);
   animation: gentlePulse 4s ease-in-out infinite;
 }
 
-.tagline-box {
+/* Updated tagline container for better alignment */
+.tagline-container {
   padding: 15px;
   background: linear-gradient(45deg,
       rgba(239, 181, 200, 0.1),
       rgba(194, 117, 143, 0.1));
   border-radius: 10px;
   border: 1px solid rgba(239, 181, 200, 0.2);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
 }
 
 .tagline {
@@ -72,8 +104,9 @@
   font-weight: 600;
   color: #EFB5C8;
   letter-spacing: 3px;
-  margin-bottom: 10px;
   text-transform: uppercase;
+  text-align: center;
+  line-height: 1.2;
 }
 
 .phone-number {
@@ -81,6 +114,11 @@
   color: #FFFFFF;
   font-weight: 500;
   letter-spacing: 1px;
+  text-align: center;
+  line-height: 1.2;
+  display: flex;
+  align-items: center;
+  gap: 8px;
 }
 
 /* Hero text */
@@ -210,37 +248,6 @@
   animation: pulse 2s infinite;
 }
 
-/* Scroll indicator */
-.scroll-indicator {
-  position: absolute;
-  bottom: 40px;
-  left: 50%;
-  transform: translateX(-50%);
-  text-align: center;
-  animation: fadeIn 2s ease-out 1.5s both;
-}
-
-.mouse {
-  width: 30px;
-  height: 50px;
-  border: 2px solid #EFB5C8;
-  border-radius: 20px;
-  margin: 0 auto;
-  position: relative;
-}
-
-.wheel {
-  width: 4px;
-  height: 8px;
-  background: #EFB5C8;
-  border-radius: 2px;
-  position: absolute;
-  top: 10px;
-  left: 50%;
-  transform: translateX(-50%);
-  animation: scroll 2s infinite;
-}
-
 /* Gradient overlays */
 .gradient-overlay {
   position: absolute;
@@ -248,7 +255,7 @@
   right: 0;
   height: 200px;
   pointer-events: none;
-  z-index: 2;
+  z-index: 3;
 }
 
 .gradient-overlay.top {
@@ -292,18 +299,6 @@
   }
 }
 
-@keyframes scroll {
-  0% {
-    top: 10px;
-    opacity: 1;
-  }
-
-  100% {
-    top: 30px;
-    opacity: 0;
-  }
-}
-
 @keyframes pulse {
   0% {
     box-shadow: 0 0 0 0 rgba(239, 181, 200, 0.4);
@@ -318,7 +313,7 @@
   }
 }
 
-/* Responsive */
+/* Responsive Design - Improved alignment */
 @media (max-width: 768px) {
   .hero-title {
     font-size: 2rem;
@@ -330,6 +325,7 @@
 
   .logo-wrapper {
     padding: 20px;
+    margin-bottom: 30px;
   }
 
   .hero-text {
@@ -343,16 +339,23 @@
   }
 
   .tagline {
-    font-size: 1.2rem;
+    font-size: 1.3rem;
     letter-spacing: 2px;
   }
 
   .phone-number {
-    font-size: 1rem;
+    font-size: 1.1rem;
+  }
+
+  /* Ensure proper centering on mobile */
+  .tagline-container {
+    align-items: center;
+    text-align: center;
+    padding: 12px;
   }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 576px) {
   .hero-title {
     font-size: 1.8rem;
   }
@@ -363,14 +366,58 @@
 
   .logo-wrapper {
     padding: 15px;
+    max-width: 95%;
+  }
+
+  .logo-container {
+    padding: 15px;
+  }
+
+  .company-logo {
+    max-height: 120px;
   }
 
   .cta-buttons {
     flex-direction: column;
   }
+
+  .tagline {
+    font-size: 1.1rem;
+    letter-spacing: 1.5px;
+  }
+
+  .phone-number {
+    font-size: 1rem;
+    justify-content: center;
+  }
+
+  /* Stack tagline and phone number vertically with proper spacing */
+  .tagline-container {
+    flex-direction: column;
+    gap: 6px;
+  }
 }
 
-/* Add to Hero.css for better button feedback */
+@media (max-width: 400px) {
+  .hero-title {
+    font-size: 1.6rem;
+  }
+
+  .hero-title .highlight {
+    font-size: 1.8rem;
+  }
+
+  .tagline {
+    font-size: 1rem;
+    letter-spacing: 1px;
+  }
+
+  .phone-number {
+    font-size: 0.9rem;
+  }
+}
+
+/* Button accessibility and states */
 .btn-primary,
 .btn-secondary {
   cursor: pointer;
@@ -382,7 +429,6 @@
   transform: scale(0.98);
 }
 
-/* Add focus styles for accessibility */
 .btn-primary:focus,
 .btn-secondary:focus {
   outline: 2px solid #EFB5C8;
@@ -401,4 +447,13 @@
 .btn-secondary.loading {
   opacity: 0.7;
   cursor: wait;
+}
+
+/* Ensure no parallax on mobile */
+@media (max-width: 768px) {
+  .hero-bg {
+    background-attachment: scroll;
+    background-size: cover;
+    background-position: center;
+  }
 }

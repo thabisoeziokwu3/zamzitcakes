@@ -1,4 +1,4 @@
-/* components/About.css - UPDATED (uniform cards, images fit perfectly) */
+/* components/About.css - UPDATED (fixed CSS warnings + added confectionaries) */
 
 .about {
   padding: 80px 20px;
@@ -23,8 +23,11 @@
 
 .about-title .highlight {
   background: linear-gradient(45deg, #EFB5C8, #C2758F);
-  /* -webkit-background-clip: text; */
+  background-clip: text;
+  -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  -moz-background-clip: text;
+  -moz-text-fill-color: transparent;
 }
 
 .about-text {
@@ -37,6 +40,44 @@
   line-height: 1.7;
   color: rgba(255, 255, 255, 0.85);
   margin-bottom: 20px;
+}
+
+/* Other Confectionaries Styles */
+.other-confectionaries {
+  margin: 30px 0;
+  padding: 20px;
+  background: rgba(239, 181, 200, 0.1);
+  border-radius: 12px;
+  border: 1px solid rgba(239, 181, 200, 0.2);
+}
+
+.confectionaries-title {
+  color: #EFB5C8;
+  font-size: 1.2rem;
+  margin-bottom: 15px;
+  font-weight: 600;
+}
+
+.confectionaries-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+}
+
+.confectionary-item {
+  padding: 8px 20px;
+  background: rgba(194, 117, 143, 0.2);
+  border: 1px solid #C2758F;
+  border-radius: 20px;
+  color: #EFB5C8;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+}
+
+.confectionary-item:hover {
+  background: rgba(239, 181, 200, 0.3);
+  transform: translateY(-2px);
 }
 
 .stats-grid {
@@ -65,8 +106,11 @@
   font-size: 2rem;
   font-weight: 700;
   background: linear-gradient(45deg, #EFB5C8, #C2758F);
-  /* -webkit-background-clip: text; */
+  background-clip: text;
+  -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  -moz-background-clip: text;
+  -moz-text-fill-color: transparent;
   margin-bottom: 8px;
 }
 
@@ -118,7 +162,6 @@
   position: relative;
   width: 100%;
   aspect-ratio: 1 / 1;
-  /* change to 4 / 5 if you want taller cards */
   overflow: hidden;
   border-radius: 15px 15px 0 0;
   background: #1a1a1a;
@@ -128,10 +171,8 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  /* fills perfectly; crops edges if needed */
   object-position: center;
   display: block;
-  /* removes inline image baseline gap */
   transform: translateZ(0);
   transition: transform 0.5s ease;
   background: #1a1a1a;
@@ -195,6 +236,15 @@
     gap: 20px;
     max-width: 900px;
   }
+
+  .confectionaries-list {
+    gap: 10px;
+  }
+
+  .confectionary-item {
+    padding: 6px 16px;
+    font-size: 0.85rem;
+  }
 }
 
 /* MOBILE */
@@ -211,6 +261,24 @@
   .about-text p {
     font-size: 1rem;
     line-height: 1.6;
+  }
+
+  .other-confectionaries {
+    padding: 15px;
+    margin: 25px 0;
+  }
+
+  .confectionaries-title {
+    font-size: 1.1rem;
+  }
+
+  .confectionaries-list {
+    gap: 8px;
+  }
+
+  .confectionary-item {
+    padding: 6px 14px;
+    font-size: 0.8rem;
   }
 
   .stats-grid {
@@ -262,6 +330,17 @@
   .stats-grid {
     grid-template-columns: 1fr;
     max-width: 250px;
+  }
+
+  .confectionaries-list {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .confectionary-item {
+    width: 80%;
+    text-align: center;
   }
 
   .cake-content {
