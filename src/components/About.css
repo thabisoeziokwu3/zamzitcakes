@@ -272,12 +272,19 @@
     font-size: 1.1rem;
   }
 
+  /* UPDATED: Confectionaries 2 by 2 on mobile */
   .confectionaries-list {
-    gap: 8px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    justify-items: center;
   }
 
   .confectionary-item {
-    padding: 6px 14px;
+    width: 100%;
+    max-width: 140px;
+    text-align: center;
+    padding: 10px 5px;
     font-size: 0.8rem;
   }
 
@@ -303,7 +310,6 @@
     padding: 0 10px;
   }
 
-  /* Optional: slightly taller image frame on mobile for nicer composition */
   .image-wrapper {
     aspect-ratio: 4 / 5;
   }
@@ -332,15 +338,16 @@
     max-width: 250px;
   }
 
+  /* UPDATED: Keep 2 by 2 even on small mobile */
   .confectionaries-list {
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
   }
 
   .confectionary-item {
-    width: 80%;
-    text-align: center;
+    max-width: 120px;
+    padding: 8px 5px;
+    font-size: 0.75rem;
   }
 
   .cake-content {
@@ -358,6 +365,19 @@
 
 /* EXTRA SMALL */
 @media (max-width: 360px) {
+
+  /* UPDATED: Adjust for extra small screens */
+  .confectionaries-list {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 6px;
+  }
+
+  .confectionary-item {
+    max-width: 110px;
+    padding: 6px 4px;
+    font-size: 0.7rem;
+  }
+
   .cake-title {
     font-size: 1rem;
   }
@@ -365,36 +385,4 @@
   .cake-description {
     font-size: 0.85rem;
   }
-}
-
-/* ============================================= */
-/* ANIMATIONS */
-/* ============================================= */
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.cake-card {
-  animation: fadeInUp 0.6s ease-out forwards;
-  opacity: 0;
-}
-
-.cake-card:nth-child(1) {
-  animation-delay: 0.1s;
-}
-
-.cake-card:nth-child(2) {
-  animation-delay: 0.2s;
-}
-
-.cake-card:nth-child(3) {
-  animation-delay: 0.3s;
 }

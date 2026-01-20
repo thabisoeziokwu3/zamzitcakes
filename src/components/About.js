@@ -31,7 +31,7 @@ const About = () => {
   ];
 
   const otherConfectionaries = [
-    'Chin Chin', 'Samoosas', 'Puff Puff', 'Spring Rolls', 'Doughnuts'
+    'Cakes', 'Chin Chin', 'Samoosas', 'Puff Puff', 'Spring Rolls', 'Doughnuts'
   ];
 
   return (
@@ -51,7 +51,7 @@ const About = () => {
             
             {/* Other Confectionaries Section */}
             <div className="other-confectionaries">
-              <h3 className="confectionaries-title">We Also Specialize In:</h3>
+              <h3 className="confectionaries-title">We Specialize In:</h3>
               <div className="confectionaries-list">
                 {otherConfectionaries.map((item, index) => (
                   <span key={index} className="confectionary-item">
